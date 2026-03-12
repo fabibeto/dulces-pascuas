@@ -1,277 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cajas de Pascua - Sabores de Jujuy</title>
+<meta charset="utf-8">
+<title>Dulces Pascuas</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#fff7f0;
-color:#333;
-}
-
-/* PARALLAX */
-
-.parallax{
-background-image:url("img/pascua-banner.jpg");
-height:500px;
-background-attachment:fixed;
-background-position:center;
-background-repeat:no-repeat;
-background-size:cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-}
-
-.parallax h1{
-font-size:48px;
-background:rgba(0,0,0,0.5);
-padding:20px;
-border-radius:10px;
-}
-
-/* INTRO */
-
-.intro{
-padding:40px 20px;
-max-width:800px;
-margin:auto;
-text-align:center;
-}
-
-.intro h2{
-font-size:36px;
-color:#8B4513;
-margin-bottom:15px;
-}
-
-.intro p{
-font-size:18px;
-}
-
-/* PRODUCTOS */
-
-.container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-padding:40px;
-}
-
-.box{
-background:white;
-width:300px;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0px 4px 12px rgba(0,0,0,0.1);
-transition:transform 0.3s;
-}
-
-.box:hover{
-transform:scale(1.05);
-}
-
-.box img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.box-content{
-padding:20px;
-text-align:center;
-}
-
-.box h3{
-color:#8B4513;
-margin-bottom:10px;
-}
-
-.price{
-font-size:24px;
-font-weight:bold;
-color:#8B4513;
-margin:15px 0;
-}
-
-button{
-background:#25D366;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-}
-
-button:hover{
-background:#1ebc57;
-}
-
-/* FOOTER */
-
-footer{
-background:#f1e2d3;
-text-align:center;
-padding:20px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.parallax{
-height:350px;
-background-attachment:scroll;
-}
-
-.parallax h1{
-font-size:32px;
-}
-
-.container{
-flex-direction:column;
-align-items:center;
-}
-
-.box{
-width:90%;
-}
-
-}
-
-</style>
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
 
 </head>
 
 <body>
 
-<!-- PARALLAX -->
+<a-scene
+mindar-image="imageTargetSrc: targets.mind"
+color-space="sRGB"
+embedded
+vr-mode-ui="enabled: false"
+device-orientation-permission-ui="enabled: true">
 
-<section class="parallax">
+<a-assets>
 
-<h1>
-Cajas de Regalo Premium 🐰
-</h1>
+<a-asset-item
+id="conejo"
+src="conejo.glb">
+</a-asset-item>
 
-</section>
+</a-assets>
 
-<!-- INTRO -->
+<a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-<section class="intro">
+<a-entity mindar-image-target="targetIndex: 0">
 
-<h2>Celebrá la Pascua</h2>
+<a-gltf-model
+src="#conejo"
+scale="0.4 0.4 0.4"
+position="0 0 0">
+</a-gltf-model>
 
-<p>
-Celebrá la Pascua con chocolates artesanales y dulces de alta calidad.
-Cada caja es una experiencia única, perfecta para regalar.
-</p>
+</a-entity>
 
-</section>
-
-<!-- PRODUCTOS -->
-
-<section class="container">
-
-<div class="box">
-
-<img src="img/huevo1.jpg">
-
-<div class="box-content">
-
-<h3>Caja Pascua Clásica</h3>
-
-<p>
-🥚 Huevo de chocolate<br>
-🍪 Cookies artesanales<br>
-🍫 Chocolates<br>
-💌 Tarjeta personalizada
-</p>
-
-<p class="price">$20.000</p>
-
-<a href="https://wa.me/549XXXXXXXXXX">
-<button>Reservar</button>
-</a>
-
-</div>
-
-</div>
-
-<div class="box">
-
-<img src="img/huevo2.jpg">
-
-<div class="box-content">
-
-<h3>Caja Pascua Deluxe</h3>
-
-<p>
-🥚 Huevo grande<br>
-🍪 Cookies rellenas<br>
-🧁 Cupcake<br>
-🍫 Bombones artesanales
-</p>
-
-<p class="price">$28.000</p>
-
-<a href="https://wa.me/549XXXXXXXXXX">
-<button>Reservar</button>
-</a>
-
-</div>
-
-</div>
-
-<div class="box">
-
-<img src="img/huevo3.jpg">
-
-<div class="box-content">
-
-<h3>Caja Sorpresa</h3>
-
-<p>
-🥚 Huevo premium<br>
-🍪 Brownies<br>
-🍫 Bombones<br>
-🎈 Globo<br>
-🚚 Entrega sorpresa
-</p>
-
-<p class="price">$35.000</p>
-
-<a href="https://wa.me/549XXXXXXXXXX">
-<button>Reservar</button>
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>🚚 Entregas en San Salvador de Jujuy</p>
-<p>⚠️ Edición limitada – Reservá con anticipación</p>
-
-</footer>
+</a-scene>
 
 </body>
 </html>
